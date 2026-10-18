@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f3ed">
+<title>Калыс & Айсулуу — приглашение на свадьбу</title>
+<style>
+:root{--paper:#f7f3ed;--ink:#302c29;--muted:#766d65;--line:#d8cec2;--accent:#8b6f58;--white:#fffdf9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+a{color:inherit}
+.page{max-width:760px;margin:auto;padding:24px}
+.langbar{display:flex;justify-content:flex-end;gap:8px;font-family:Arial,sans-serif}
+.langbar button{border:1px solid var(--line);background:transparent;border-radius:30px;padding:8px 14px;color:var(--ink);cursor:pointer}
+.langbar button.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:52px 18px;position:relative}
+.eyebrow{font:11px/1.6 Arial,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.ornament{font-size:32px;color:var(--accent);margin:24px 0 14px}
+h1{font-weight:400;font-size:clamp(44px,9vw,76px);line-height:1.04;letter-spacing:-.04em;margin:0}
+.amp{font-style:italic;color:var(--accent);font-size:.72em}
+.hero-date{margin-top:28px;font-size:19px;letter-spacing:.16em}
+.hero-note{max-width:400px;color:var(--muted);font-size:17px;line-height:1.7;margin:24px auto 0}
+.scroll{position:absolute;bottom:20px;font:10px Arial,sans-serif;letter-spacing:.22em;color:var(--muted)}
+.section{padding:58px 18px;border-top:1px solid var(--line);text-align:center}
+.kicker{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h2{font-weight:400;font-size:clamp(28px,5vw,40px);margin:0 0 18px}
+p{font-size:17px;line-height:1.8;margin:10px auto;max-width:520px}
+.muted{color:var(--muted)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:480px;margin:28px auto 0}
+.unit{padding:16px 4px;border:1px solid var(--line);background:rgba(255,253,249,.55)}
+.num{display:block;font-size:34px;line-height:1.1}
+.unit small{display:block;font:10px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+.venue{padding:24px;border:1px solid var(--line);max-width:520px;margin:24px auto;background:rgba(255,253,249,.45)}
+.venue-name{font-size:28px;margin-bottom:8px}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--ink);padding:13px 18px;min-height:46px;font:11px Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;background:var(--ink);color:var(--white)}
+.btn.secondary{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.8}
+.rsvp{max-width:500px;margin:24px auto 0;text-align:left}
+label{display:block;font:11px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:16px 0 7px;color:var(--muted)}
+input,select,textarea{width:100%;padding:13px;border:1px solid var(--line);background:var(--white);font:16px Georgia,serif;color:var(--ink);border-radius:0}
+textarea{min-height:90px;resize:vertical}
+.notice{font:12px/1.6 Arial,sans-serif;color:var(--muted);text-align:center;margin-top:12px}
+footer{text-align:center;padding:38px 10px 26px;color:var(--muted);font-size:14px}
+.footer-names{font-size:27px;color:var(--ink);margin-bottom:10px}
+.rule{width:46px;border-top:1px solid var(--accent);margin:20px auto}
+@media(max-width:420px){.page{padding:12px}.hero{min-height:80vh}.section{padding:46px 8px}.num{font-size:28px}.btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="langbar" aria-label="Language">
+    <button id="ruBtn" class="active" type="button" onclick="setLang('ru')">РУС</button>
+    <button id="kyBtn" type="button" onclick="setLang('ky')">КЫР</button>
+  </div>
+  <header class="hero">
+    <div class="eyebrow" data-ru="Приглашение на свадьбу" data-ky="Үйлөнүү тоюна чакыруу">Приглашение на свадьбу</div>
+    <div class="ornament">✧</div>
+    <h1>Калыс<br><span class="amp">&</span><br>Айсулуу</h1>
+    <div class="hero-date">21 · 11 · 2026</div>
+    <p class="hero-note" data-ru="С радостью приглашаем вас разделить с нами один из самых важных дней нашей жизни." data-ky="Жашообуздагы эң маанилүү күндөрдүн бирин биз менен бирге бөлүшүүгө чакырабыз.">С радостью приглашаем вас разделить с нами один из самых важных дней нашей жизни.</p>
+    <div class="scroll" data-ru="ЛИСТАЙТЕ ВНИЗ ↓" data-ky="ТӨМӨН ЖЫЛДЫРЫҢЫЗ ↓">ЛИСТАЙТЕ ВНИЗ ↓</div>
+  </header>
+
+  <section class="section">
+    <div class="kicker" data-ru="Наш день" data-ky="Биздин күн">Наш день</div>
+    <h2 data-ru="Будем счастливы видеть вас" data-ky="Сиздерди көргөнүбүзгө кубанычтабыз">Будем счастливы видеть вас</h2>
+    <p data-ru="Для нас большая радость — разделить этот день с близкими людьми. Ваше присутствие сделает наш праздник ещё теплее и светлее." data-ky="Бул өзгөчө күндү жакындарыбыз менен өткөрүү биз үчүн чоң бакыт. Сиздердин келгениңиздер майрамыбызды дагы да жылуу жана кубанычтуу кылат.">Для нас большая радость — разделить этот день с близкими людьми. Ваше присутствие сделает наш праздник ещё теплее и светлее.</p>
+    <div class="countdown" aria-label="Обратный отсчёт">
+      <div class="unit"><span class="num" id="days">—</span><small data-ru="дней" data-ky="күн">дней</small></div>
+      <div class="unit"><span class="num" id="hours">—</span><small data-ru="часов" data-ky="саат">часов</small></div>
+      <div class="unit"><span class="num" id="mins">—</span><small data-ru="минут" data-ky="мүнөт">минут</small></div>
+      <div class="unit"><span class="num" id="secs">—</span><small data-ru="секунд" data-ky="секунд">секунд</small></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker" data-ru="Место встречи" data-ky="Жолугушуу орду">Место встречи</div>
+    <h2 data-ru="Ждём вас" data-ky="Сиздерди күтөбүз">Ждём вас</h2>
+    <div class="venue">
+      <div class="venue-name">«Звездопад»</div>
+      <p class="muted" data-ru="Ставропольский проспект, 7<br>Москва" data-ky="Ставропольский проспекти, 7<br>Москва">Ставропольский проспект, 7<br>Москва</p>
+      <div class="rule"></div>
+      <p data-ru="21 ноября 2026 года" data-ky="2026-жылдын 21-ноябры">21 ноября 2026 года</p>
+      <p class="muted" data-ru="Время начала сообщим дополнительно" data-ky="Башталыш убактысын кийинчерээк билдиребиз">Время начала сообщим дополнительно</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="https://yandex.ru/maps/org/zvezdopad/33019900906?si=kc67bnfx7hdefdg12kd8u9h2mm" target="_blank" rel="noopener" data-ru="Открыть карту" data-ky="Картаны ачуу">Открыть карту</a>
+      <a class="btn secondary" href="https://instagram.com/zvezdopad.ru?xtok=em1raTI2MnF1bGVq" target="_blank" rel="noopener">Instagram · «Звездопад»</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker" data-ru="Ответьте нам" data-ky="Жообуңузду күтөбүз">Ответьте нам</div>
+    <h2 data-ru="Вы будете с нами?" data-ky="Биз менен болосузбу?">Вы будете с нами?</h2>
+    <p class="muted" data-ru="Заполните ответ — сайт подготовит сообщение, которое можно скопировать и отправить нам." data-ky="Жообуңузду толтуруңуз — сайт бизге жөнөтүү үчүн билдирүү даярдайт.">Заполните ответ — сайт подготовит сообщение, которое можно скопировать и отправить нам.</p>
+    <form class="rsvp" id="rsvpForm">
+      <label for="guest" data-ru="Ваше имя" data-ky="Атыңыз">Ваше имя</label>
+      <input id="guest" required placeholder="Имя и фамилия">
+      <label for="attendance" data-ru="Сможете прийти?" data-ky="Келе аласызбы?">Сможете прийти?</label>
+      <select id="attendance">
+        <option value="Да, с радостью буду!" data-ru="Да, с радостью буду!" data-ky="Ооба, кубануу менен келем!">Да, с радостью буду!</option>
+        <option value="К сожалению, не смогу прийти." data-ru="К сожалению, не смогу прийти." data-ky="Тилекке каршы, келе албайм.">К сожалению, не смогу прийти.</option>
+      </select>
+      <label for="note" data-ru="Комментарий (необязательно)" data-ky="Кошумча билдирүү (милдеттүү эмес)">Комментарий (необязательно)</label>
+      <textarea id="note" placeholder="..."></textarea>
+      <div class="actions"><button class="btn" type="submit" data-ru="Подготовить ответ" data-ky="Жоопту даярдоо">Подготовить ответ</button></div>
+      <p class="notice" id="rsvpStatus" aria-live="polite" data-ru="Ответ не отправляется автоматически: после подготовки скопируйте сообщение и отправьте его организаторам." data-ky="Жооп автоматтык түрдө жөнөтүлбөйт: билдирүүнү көчүрүп, уюштуруучуларга жөнөтүңүз.">Ответ не отправляется автоматически: после подготовки скопируйте сообщение и отправьте его организаторам.</p>
+      <textarea id="messageOut" readonly hidden aria-label="Готовое сообщение"></textarea>
+      <div class="actions"><button id="copyBtn" class="btn secondary" type="button" hidden data-ru="Скопировать ответ" data-ky="Жоопту көчүрүү">Скопировать ответ</button></div>
+    </form>
+  </section>
+
+  <section class="section">
+    <div class="kicker" data-ru="Сохраним воспоминания" data-ky="Эскерүүлөрдү сактайлы">Сохраним воспоминания</div>
+    <h2 data-ru="Фото со свадьбы" data-ky="Тойдун сүрөттөрү">Фото со свадьбы</h2>
+    <p data-ru="Ссылка на Telegram-канал со свадебными фотографиями." data-ky="Тойдун сүрөттөрү жайгаштырыла турган Telegram-каналга шилтеме.">Ссылка на Telegram-канал со свадебными фотографиями.</p>
+    <div class="actions"><a class="btn" href="https://t.me/weddingKalysAisuluu" target="_blank" rel="noopener">Telegram</a></div>
+  </section>
+  <footer>
+    <div class="footer-names">Калыс <span class="amp">&</span> Айсулуу</div>
+    <div data-ru="С любовью и благодарностью ждём встречи" data-ky="Сүйүү жана ыраазычылык менен күтөбүз">С любовью и благодарностью ждём встречи</div>
+    <div class="rule"></div>
+    <small>21 · 11 · 2026</small>
+  </footer>
+</div>
+<script>
+let lang='ru';
+function setLang(next){
+  lang=next;
+  document.documentElement.lang=next==='ru'?'ru':'ky';
+  document.querySelectorAll('[data-'+next+']').forEach(el=>{
+    const value=el.getAttribute('data-'+next);
+    if(value!==null) el.innerHTML=value;
+  });
+  document.getElementById('ruBtn').classList.toggle('active',next==='ru');
+  document.getElementById('kyBtn').classList.toggle('active',next==='ky');
+  document.getElementById('guest').placeholder=next==='ru'?'Имя и фамилия':'Аты-жөнү';
+  document.getElementById('note').placeholder=next==='ru'?'Ваш комментарий':'Билдирүүңүз';
+}
+function tick(){
+  const target=new Date('2026-11-21T17:00:00+03:00').getTime();
+  const diff=Math.max(0,target-Date.now());
+  const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
+  ['days','hours','mins','secs'].forEach((id,i)=>document.getElementById(id).textContent=String([d,h,m,s][i]).padStart(2,'0'));
+}
+tick();setInterval(tick,1000);
+const form=document.getElementById('rsvpForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('guest').value.trim();
+  const attendance=document.getElementById('attendance').value;
+  const note=document.getElementById('note').value.trim();
+  const msg=lang==='ru'
+    ? `Ответ на приглашение Калыса и Айсулуу\\nИмя: ${name}\\nОтвет: ${attendance}${note?'\\nКомментарий: '+note:''}`
+    : `Калыс менен Айсулуунун чакыруусуна жооп\\nАты: ${name}\\nЖооп: ${attendance}${note?'\\nКошумча: '+note:''}`;
+  const out=document.getElementById('messageOut');
+  out.hidden=false;out.value=msg;
+  document.getElementById('copyBtn').hidden=false;
+  document.getElementById('rsvpStatus').textContent=lang==='ru'?'Готово! Скопируйте сообщение ниже и отправьте его удобным способом.':'Даяр! Төмөндөгү билдирүүнү көчүрүп, ыңгайлуу жол менен жөнөтүңүз.';
+});
+document.getElementById('copyBtn').addEventListener('click',async()=>{
+  const out=document.getElementById('messageOut');
+  out.select();out.setSelectionRange(0,99999);
+  try{await navigator.clipboard.writeText(out.value);document.getElementById('rsvpStatus').textContent=lang==='ru'?'Ответ скопирован.':'Жооп көчүрүлдү.';}
+  catch(e){document.getElementById('rsvpStatus').textContent=lang==='ru'?'Выделите текст и скопируйте его вручную.':'Текстти белгилеп, кол менен көчүрүңүз.';}
+});
+</script>
+</body>
+</html>
